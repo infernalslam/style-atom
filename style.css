@@ -1,0 +1,105 @@
+
+html {
+  opacity: 0.7;
+  filter: alpha(opacity=30);
+}
+// // เอาเครื่องหมายลูกศรออก
+.tree-view .selected:before {
+  // background: hsla(0, 0%, 100%, .2); // show lines underneath
+   background: linear-gradient(to left, rgba(255,0,0,0), rgba(255,0,0,1));
+}
+//
+.tree-view .directory {
+  & > .list-item:before {
+    // visibility: hidden; // hide arrows
+    color: red;
+  }
+}
+//
+// // ทำให้เมนูกลายเป็น 3D
+.tree-view {
+  // background: linear-gradient(150deg, #C52184, #A5C4D4);
+  transform: translateY(-10vh) perspective(12in) rotateY(20deg);
+  padding-top: 12vh;
+  padding-bottom: 12vh;
+  transform-origin: left;
+  width: 120%;
+  height: 120%;
+}
+//
+//  // เอา background-color ของชื่อ project ออก
+ .header.list-item.project-root-header {
+   background: linear-gradient(to left, rgba(255,0,0,0), rgba(255,0,0,1));
+ }
+//
+ .texteditor.tab.sortable.active {
+   background: linear-gradient(to left, rgba(255,0,0,0), rgba(255,0,0,1));
+ }
+
+.list-group li:not(.list-nested-item),
+.list-tree li:not(.list-nested-item),
+.list-group li.list-nested-item > .list-item,
+.list-tree li.list-nested-item > .list-item {
+    line-height:18px;
+}
+
+.list-group .selected:before,
+.list-tree .selected:before {
+    height:18px;
+}
+
+.list-tree.has-collapsable-children .list-nested-item > .list-tree > li,
+.list-tree.has-collapsable-children .list-nested-item > .list-group > li {
+    padding-left:18px;
+}
+
+// cf. http://marcio.io/2015/07/supercharging-atom-editor-for-go-development/
+.symbols-view {
+  &.select-list ol.list-group li .primary-line,
+  &.select-list ol.list-group li .secondary-line {
+    font-size: 14px;
+
+    // let lines wrap
+    text-overflow: initial;
+    white-space: initial;
+    overflow: initial;
+
+    // reduce line-height
+    line-height: 1.0em;
+    padding-top: .1em;
+    padding-bottom: .0em;
+
+    // make sure wrapped lines get padding
+    // padding-left: 21px;
+    &.icon:before {
+      margin-left: -21px;
+    }
+
+    .character-match {
+        color: rgb(200, 200, 10) !important;
+    }
+  }
+}
+
+.symbols-view {
+  &.select-list ol.list-group li .secondary-line {
+      float: right;
+      margin-top: -12px;
+      padding-top: 0em;
+      padding-bottom: 0em;
+      font-size: 12px;
+      color: rgba(200, 200, 10, 0.8) !important;
+  }
+}
+
+/////////////////////////
+.status-bar {
+  border-top: 1px solid red;
+  // background: white;
+  // background: linear-gradient(to right, #84fab0 0%, #8fd3f4 51%, #84fab0 100%);
+  line-height: 18px;
+  height: 20px;
+}
+.workspace {
+  background-color: #21252b !important;
+}
